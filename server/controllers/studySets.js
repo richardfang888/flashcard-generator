@@ -1,14 +1,18 @@
-import StudySet from "../models/StudySet";
+import StudySet from "../models/StudySet.js";
+import User from "../models/User.js";
 
 //Add a new StudySet
 export const addStudySet = async (req, res, next) => {
   try {
-    const { title, description, flashCards } = req.body
-    const studySet = await StudySet.create({ title, description, flashCards })
-    res.status(201).json({ success: true, data: studySet })
+    const { userId, title, description, flashCards } = req.body
+    const user = await User.findById(userId)
+    const newStudySet = new StudySet ({ userId, title, description, flashCards })
+    await newStudySet.save()
+    const studySet = await studySet.find()
+    res.status(201).json(studySet)
   } catch (err) {
     console.error(err)
-    res.status(500).json({ success: false, error: 'Server Error' })
+    res.status(500).json({ message: err.message })
   }
 };
 

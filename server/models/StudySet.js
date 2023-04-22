@@ -17,6 +17,10 @@ const flashCardSchema = new mongoose.Schema({
 });
 
 const studySetSchema = new mongoose.Schema({
+    userId: {
+      type: String,
+      required: true,
+    },
     title: {
       type: String,
       required: true

@@ -7,6 +7,12 @@ import multer from 'multer'
 import helmet from 'helmet'
 import cors from 'cors'
 import { fileURLToPath } from 'url'
+import authRoutes from './routes/auth.js'
+import userRoutes from './routes/users.js'
+import studySetRoutes from './routes/studySets.js'
+import { verifyToken } from './middleware/auth.js'
+import { addStudySet } from './controllers/studySets.js'
+import { register } from './controllers/auth.js'
 
 /* CONFIGURATIONS */
 const __filename = fileURLToPath(import.meta.url)
@@ -43,3 +49,12 @@ mongoose.connect(process.env.MONGO_URL, {
     /* ADD MOCK DATA HERE */
 
 }).catch((error) => console.log(`${error} did not connect`))
+
+/* ROUTES WITH FILES */
+app.post('/auth/register', register)
+app.post('/studySets', verifyToken, addStudySet)
+
+/* ROUTES */
+app.use('/auth', authRoutes)
+app.use('/users', userRoutes)
+app.use('/studySets', studySetRoutes)

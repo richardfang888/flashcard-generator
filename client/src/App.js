@@ -1,13 +1,13 @@
+import Flash from './scenes/studySetPage/studySetPage'
+import {BrowserRouter, Routes, Route} from 'react-router-dom'
+
 function App() {
   return (
-    <div className="App">
-      {/* Test code */}
-      <div className='test'>
-        test
-      </div>
-      {/* end test */}
-      
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/studyset" element={<Flash/>}/>
+      </Routes>
+    </BrowserRouter>
   );
 }
 

@@ -1,5 +1,7 @@
 import StudySet from "../models/StudySet.js";
+import FlashCard from "../models/StudySet.js"
 import User from "../models/User.js";
+import cohere from 'cohere-ai'
 
 //Add a new StudySet
 export const addStudySet = async (req, res, next) => {
@@ -49,10 +51,10 @@ export const updateStudySet = async (req, res, next) => {
 
 export const addFlashCard = async (req, res) => {
     const { id } = req.params
-    const { question, answer, status } = req.body
+    const { question, answer } = req.body
     try {
       const studySet = await StudySet.findById(id)
-      const newFlashCard = { question, answer, status }
+      const newFlashCard = { question, answer }
       studySet.flashCards.push(newFlashCard)
       const updatedStudySet = await studySet.save()
       res.status(201).json(updatedStudySet)
@@ -77,7 +79,7 @@ export const addFlashCard = async (req, res) => {
   
   export const updateFlashCard = async (req, res) => {
     const { id, flashCardId } = req.params;
-    const { question, answer, status } = req.body;
+    const { question, answer } = req.body;
     try {
       const studySet = await StudySet.findById(id);
       const flashCardToUpdate = studySet.flashCards.find(
@@ -86,7 +88,6 @@ export const addFlashCard = async (req, res) => {
       if (flashCardToUpdate) {
         flashCardToUpdate.question = question || flashCardToUpdate.question
         flashCardToUpdate.answer = answer || flashCardToUpdate.answer
-        flashCardToUpdate.status = status || flashCardToUpdate.status
         const updatedStudySet = await studySet.save()
         res.status(200).json(updatedStudySet)
       } else {
@@ -97,6 +98,36 @@ export const addFlashCard = async (req, res) => {
     }
   };
   
+  //generate flashcards using Cohere AI
+  cohere.init('<INSERT API KEY>')
+  export const generateFlashCards = async () => {
+    try {
+      const generatedFlashCards = await cohere.generate({
+        model: 'command-xlarge-nightly',
+        prompt: '{insert prompt}',
+        max_tokens: 300,
+        temperature: 0.9,
+        k: 0,
+        stop_sequences: [],
+        return_likelihoods: 'NONE'
+      });
+      
+      //flashcards generated in json form { question, answer }
+      generatedFlashCards.forEach(async (generatedFlashCard) => {
+        // Create a new flashcard object
+        const newFlashCard = new FlashCard({
+          ...generatedFlashCard,
+          status: 'New',
+        });
+    
+        // Add the new flashcard to the flashCards array
+        flashCards.push(newFlashCard);
+      })
+    }
+    catch (error) {
+      res.status(404).json({ message: error.message })
+    }
+  }
   
   
   

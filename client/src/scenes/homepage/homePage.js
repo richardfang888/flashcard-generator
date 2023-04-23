@@ -1,49 +1,106 @@
 import React, { useState } from "react";
-import { useDispatch } from "react-redux";
-import { Box } from "@mui/material";
+import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
+import { Box, Typography } from "@mui/material";
+
 
 const HomePage = () => {
-  const [createMethod, setCreateMethod] = useState(null);
-  const [newStudySetName, setNewStudySetName] = useState("");
+  const [showGForm, setShowGForm] = useState(false);
+  const [showMForm, setShowMForm] = useState(false);
+  const [mtopic, setMTopic] = useState("");
+  const [gtopic, setGTopic] = useState("");
   const [notes, setNotes] = useState("");
+  const user = useSelector((state) => state.user)
+  const studySets = user.studySets
 
-  const handleNewStudySet = () => {
-    if (createMethod === "manual") {
-      // handle manual creation
-      console.log("Manual creation selected");
-      // call a function to create the studySet manually
-      
-    } else if (createMethod === "notes") {
-      // handle notes creation
-      console.log("Notes creation selected");
-      // call the generateFlashCards function with the notes as the request
-    }
+  const handleGTopicChange = (event) => {
+    setGTopic(event.target.value);
   };
 
+  const handleMTopicChange = (event) => {
+    setMTopic(event.target.value);
+  };
+
+  const handleNotesChange = (event) => {
+    setNotes(event.target.value);
+  };
+
+  const handleGenerate = async (event) => {
+    // event.preventDefault();
+    console.log(`Topic: ${gtopic}, Notes: ${notes}`);
+    const response = await fetch("http://localhost:3001/studysets/generate", {
+      mode: 'no-cors',
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ gtopic, notes }),
+    });
+    console.log(response)
+    setGTopic("");
+    setNotes("");
+    setShowGForm(false);
+  };
+
+  const handleManual = async (event) => {
+    const response = await fetch("http://localhost:3001/studysets", {
+      mode: 'no-cors',
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ mtopic, notes }),
+    });
+    setMTopic("");
+    setShowMForm(false);
+    console.log(response)
+  }
+  
   return (
     <div>
       <h1>Your Study Sets</h1>
-      <Box></Box>
-      <button onClick={() => setCreateMethod("dropdown")}>Add New StudySet</button>
-      {createMethod === "dropdown" && (
-        <div>
-          <label htmlFor="studySetName">Topic: </label>
+      <button onClick={() => setShowMForm(true)}>Create New Study Set</button>
+      {showMForm && (
+        <form onSubmit={handleManual}>
+          <label htmlFor="topicInput">Topic:</label>
           <input
             type="text"
-            id="studySetName"
-            name="studySetName"
-            value={newStudySetName}
-            onChange={(e) => setNewStudySetName(e.target.value)}
+            id="topicInput"
+            value={mtopic}
+            onChange={handleMTopicChange}
           />
-          <select onChange={(e) => setCreateMethod(e.target.value)}>
-            <option value="" disabled selected hidden>
-              Choose creation method
-            </option>
-            <option value="notes">Create Using Notes</option>
-            <option value="manual">Create Manually</option>
-          </select>
-        </div>
+          <button type="submit">Submit</button>
+        </form>
       )}
+      <button onClick={() => setShowGForm(true)}>Generate Study Set From Text</button>
+      {showGForm && (
+        <form onSubmit={handleGenerate}>
+          <label htmlFor="topicInput">Topic:</label>
+          <input
+            type="text"
+            id="topicInput"
+            value={gtopic}
+            onChange={handleGTopicChange}
+          />
+          <br />
+          <label htmlFor="notesInput">Notes:</label>
+          <textarea
+            id="notesInput"
+            value={notes}
+            onChange={handleNotesChange}
+            style={{ height: "200px", width: "500px" }}
+          />
+          <br />
+          <button type="submit">Submit</button>
+        </form>
+      )}
+      {console.log(studySets)}
+      {
+      studySets.map((studySet) => (
+        <Box sx={{ p: 2 }} key={studySet._id}>
+          <Typography variant="h5">
+            <Link to={`/${studySet._id}`} style={{ textDecoration: "none" }}>
+              {studySet.title}
+            </Link>
+          </Typography>
+        </Box>
+      ))}
     </div>
   );
 };

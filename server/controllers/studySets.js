@@ -6,9 +6,8 @@ import cohere from 'cohere-ai'
 //Add a new StudySet
 export const addStudySet = async (req, res, next) => {
   try {
-    const { userId, title, description, flashCards } = req.body
-    const user = await User.findById(userId)
-    const newStudySet = new StudySet ({ userId, title, description, flashCards })
+    const { userId, title } = req.body
+    const newStudySet = new StudySet ({ userId, title })
     await newStudySet.save()
     const studySet = await studySet.find()
     res.status(201).json(studySet)
@@ -100,29 +99,48 @@ export const addFlashCard = async (req, res) => {
   
   //generate flashcards using Cohere AI
   cohere.init('M5HQvvV8KR5K9o8U5THd65iMsSJFf0y8SD8mBJpp')
+
   export const generateFlashCards = async (req, res) => {
     try {
-      const notes = req.body
-      const generatedFlashCards = await cohere.generate({
+      console.log(req.body)
+      const { userId, title, notes } = req.body
+      const newStudySet = new StudySet ({ userId, title })
+      await newStudySet.save()
+      const response = await cohere.generate({
         model: 'command-xlarge-nightly',
-        prompt: `please make flashcards out of the following information, in this format: one sentence that is a question, followed by one sentence that is the answer to that question. make it in digestible chunks, and make however many flashcards you feel appropriate.\n\n ${notes}`,
+        prompt: `Please make flashcards out of the following information, in this format: one sentence that is a question, followed by one sentence that is the answer to that question. make it in digestible chunks, and make however many flashcards you feel appropriate.\n\n ${notes}`,
         max_tokens: 300,
-        temperature: 0.9,
+        temperature: 0.2,
         k: 0,
         stop_sequences: [],
         return_likelihoods: 'NONE'
       });
+
+      if (!response.body.generations) {
+        throw new Error('Failed to retrieve response data');
+      }
+      
+      const generations = response.body.generations[0].text.trim().split('\n\n');
+      const result = [];
+
+      for (const generation of generations) {
+        const [prompt, text] = generation.split('\n');
+        if (prompt && text) {
+          result.push({ question: prompt, answer: text });
+        }
+      }
       
       //flashcards generated in json form { question, answer }
-      generatedFlashCards.forEach(async (generatedFlashCard) => {
+      result.forEach((generatedFlashCard) => {
         // Create a new flashcard object
         const newFlashCard = new FlashCard({
           ...generatedFlashCard,
           status: 'New',
         });
-    
+        
         // Add the new flashcard to the flashCards array
-        flashCards.push(newFlashCard);
+        newStudySet.flashCards.push(newFlashCard);
+        res.status(201).json(newStudySet)
       })
     }
     catch (error) {

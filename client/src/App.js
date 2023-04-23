@@ -5,9 +5,11 @@ import StudyPage from "./scenes/studySetPage/studySetPage"
 import { CssBaseline, ThemeProvider } from "@mui/material";
 import { createTheme } from "@mui/material/styles";
 import { themeSettings } from "./theme";
+import { useSelector } from 'react-redux';
 
 function App() {
   const theme = createTheme(themeSettings())
+  const user = useSelector(state => state.user)
   return (
     <div className = 'app'>
       <BrowserRouter>
@@ -15,7 +17,7 @@ function App() {
         <CssBaseline>
             <Routes>
               <Route path="/" element={<LoginPage />} />
-              <Route path="/users/:userId" element={<HomePage />}/>
+              <Route path={`/users/${user}`} element={<HomePage />}/>
               <Route path="/:" element={<StudyPage />}/>
             </Routes>
         </CssBaseline>

@@ -21,6 +21,6 @@ router.put('/studysets/:id', updateStudySet); //update an existing studySet
 router.post('/studysets/:id/flashcards', addFlashCard); //add a new flashcard manually
 router.delete('/studysets/:id/flashcards/:flashCardId', deleteFlashCard); //delete an existing flashcard
 router.put('/studysets/:id/flashcards/:flashCardId', updateFlashCard); //update an existing flashcard
-router.post('/studysets/:id/flashcards/generate', generateFlashCards); //auto generate flashcards using cohere
+router.post('/studysets/generate', generateFlashCards); //auto generate flashcards using cohere
 
 export default router;

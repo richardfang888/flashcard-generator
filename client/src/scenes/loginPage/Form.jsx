@@ -45,6 +45,7 @@ const Form = () => {
   const isNonMobile = useMediaQuery("(min-width:600px)");
   const isLogin = pageType === "login";
   const isRegister = pageType === "register";
+  
 
   const register = async (values, onSubmitProps) => {
     const savedUserResponse = await fetch(
@@ -63,7 +64,7 @@ const Form = () => {
     }
   };
 
-  const login = async (values, onSubmitProps) => {
+  const login = async (values, user, onSubmitProps) => {
     const loggedInResponse = await fetch("http://localhost:3001/auth/login", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -76,12 +77,12 @@ const Form = () => {
           user: loggedIn.user,
         })
       );
-      navigate('/users/:userId');
+      navigate(`/users/${user}`);
     }
   };
 
-  const handleFormSubmit = async (values, onSubmitProps) => {
-    if (isLogin) await login(values, onSubmitProps);
+  const handleFormSubmit = async (values, user, onSubmitProps) => {
+    if (isLogin) await login(values, user, onSubmitProps);
     if (isRegister) await register(values, onSubmitProps);
   };
 

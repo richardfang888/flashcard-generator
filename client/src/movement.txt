@@ -1,0 +1,3 @@
+Membrane lipids are amphipathic; that is they contain both  hydrophobic and hydrophilic regions. The hydrophilic (polar)  region of the membrane lipids is their globular head; the hydrophobic (nonpolar)  regions of the membrane lipids is their fatty acid tails. 
+The membrane lipids are organized into a continuous bilayer in which the hydrophobic regions of the phospholipids are shielded  from the aqueous environment, while the hydrophilic regions are immersed in water. 
+In membrane lipids, proteins are found inserted into this  lipid bilayer and are classified into integral proteins and periph eral proteins. Integral proteins are anchored to membranes through a direct interaction with the lipid bilayer

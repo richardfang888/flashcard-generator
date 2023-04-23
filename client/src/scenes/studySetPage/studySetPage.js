@@ -1,9 +1,7 @@
-import React from 'react'
-
-function studySetPage() {
+const StudyPage = () => {
   return (
     <div>studySetPage</div>
   )
 }
 
-export default studySetPage
+export default StudyPage

@@ -12,11 +12,9 @@ export const authSlice = createSlice({
     reducers: {
         setLogin: (state, action) => {
             state.user = action.payload.user
-            state.token = action.payload.token
         },
         setLogout: (state) => {
             state.user = null
-            state.token = null
         },
         setStudySets: (state, action) => {
             state.studySets = action.payload.studySets
@@ -31,5 +29,5 @@ export const authSlice = createSlice({
     }
 })
 
-export const { setMode, setFriends, setLogin, setLogout, setStudySet, setStudySets } = authSlice.actions
+export const { setLogin, setLogout, setStudySet, setStudySets } = authSlice.actions
 export default authSlice.reducer

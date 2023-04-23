@@ -1,0 +1,285 @@
+
+.Desktop1_Desktop1 {
+	position: relative;
+	left: 0px;
+	top: 0px;
+	margin: auto;
+	width: 100%;
+	height: 100vh;
+	overflow: auto;
+	background: rgba(255,255,255,1.00);
+}
+.Desktop1_Desktop1 .WelcomebackUSERNAME {
+	position: absolute;
+	left: 522px;
+	top: 231px;
+	width: 395px;
+	height: 46px;
+	display: flex;
+	justify-content: center;
+	text-align: center;
+	align-items: center;
+	color: rgba(0,30,10,1.00);
+	font-family: Barlow;
+	font-size: 40px;
+	font-weight: 700;
+	line-height: 48px;
+}
+.Desktop1_Desktop1 .image1 {
+	position: absolute;
+	left: 0px;
+	top: 91px;
+	width: 1440px;
+	height: 326px;
+	object-fit: cover;
+	overflow: hidden;
+	mix-blend-mode: darken;
+}
+.Desktop1_Desktop1 .Search {
+	position: absolute;
+	left: 46px;
+	top: 443px;
+	width: 1347px;
+	height: 69px;
+	background: rgba(245,245,245,1.00);
+	border-radius: 30px;
+}
+.Desktop1_Desktop1 .Header {
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	width: 1440px;
+	height: 96px;
+	background: rgba(199,255,218,1.00);
+}
+.Desktop1_Desktop1 .Header .Logout {
+	position: absolute;
+	left: 1198px;
+	top: 19px;
+	width: 221px;
+	height: 55px;
+	background: rgba(199,255,218,1.00);
+	border-radius: 20px;
+	border: 1px solid rgba(0,115.81250354647636,39.376268684864044,1);
+	box-sizing: border-box;
+}
+.Desktop1_Desktop1 .Header .Logout .LogOut {
+	position: absolute;
+	left: 18px;
+	top: 10px;
+	width: 185px;
+	height: 35px;
+	display: flex;
+	justify-content: center;
+	text-align: center;
+	color: rgba(0,30,10,1.00);
+	font-family: Barlow;
+	font-size: 24px;
+	font-weight: 700;
+	line-height: 28.80000114440918px;
+}
+.Desktop1_Desktop1 .Header .Home {
+	position: absolute;
+	left: 968px;
+	top: 18px;
+	width: 221px;
+	height: 55px;
+	background: rgba(0,116,39,0.26);
+	border-radius: 20px;
+	border: 1px solid rgba(0,115.81250354647636,39.376268684864044,1);
+	box-sizing: border-box;
+}
+.Desktop1_Desktop1 .Header .Home .Home_1 {
+	position: absolute;
+	left: 18px;
+	top: 10px;
+	width: 185px;
+	height: 35px;
+	display: flex;
+	justify-content: center;
+	text-align: center;
+	color: rgba(0,30,10,1.00);
+	font-family: Barlow;
+	font-size: 24px;
+	font-weight: 700;
+	line-height: 28.80000114440918px;
+}
+.Desktop1_Desktop1 .Header .Logo {
+	position: absolute;
+	left: 22px;
+	top: 22px;
+	width: 175px;
+	height: 46px;
+	display: flex;
+	justify-content: center;
+	text-align: center;
+	align-items: center;
+	color: rgba(0,30,10,1.00);
+	font-family: Barlow;
+	font-size: 36px;
+	font-weight: 700;
+	line-height: 43.20000076293945px;
+}
+.Desktop1_Desktop1 .Flashcards {
+	position: absolute;
+	left: 0px;
+	top: 539px;
+	width: 1440px;
+	height: 485px;
+	background: rgba(229,229,229,1.00);
+}
+.Desktop1_Desktop1 .Flashcards .Flashcard3 {
+	position: absolute;
+	left: 1007px;
+	top: 74px;
+	width: 381px;
+	height: 276px;
+	background: rgba(255,255,255,1.00);
+}
+.Desktop1_Desktop1 .Flashcards .Flashcard3 .Frame8 {
+	position: absolute;
+	left: 29px;
+	top: 17px;
+	width: 325px;
+	height: 197px;
+}
+.Desktop1_Desktop1 .Flashcards .Flashcard3 .Frame8 .image4 {
+	position: absolute;
+	left: -1336px;
+	top: -462px;
+	width: 2129px;
+	height: 916px;
+	object-fit: cover;
+	overflow: hidden;
+}
+.Desktop1_Desktop1 .Flashcards .Flashcard3 .Frame8 .image5 {
+	position: absolute;
+	left: -78px;
+	top: -44px;
+	width: 625px;
+	height: 286px;
+	object-fit: cover;
+	overflow: hidden;
+}
+.Desktop1_Desktop1 .Flashcards .Flashcard3 .DNA {
+	position: absolute;
+	left: 29px;
+	top: 220px;
+	width: 325px;
+	height: 39px;
+	display: flex;
+	justify-content: center;
+	text-align: center;
+	align-items: center;
+	color: rgba(0,0,0,1.00);
+	font-family: Barlow;
+	font-size: 24px;
+	font-weight: 700;
+	line-height: 28.80000114440918px;
+}
+.Desktop1_Desktop1 .Flashcards .Flashcard2 {
+	position: absolute;
+	left: 530px;
+	top: 73px;
+	width: 381px;
+	height: 276px;
+	background: rgba(255,255,255,1.00);
+}
+.Desktop1_Desktop1 .Flashcards .Flashcard2 .Frame8_1 {
+	position: absolute;
+	left: 29px;
+	top: 17px;
+	width: 325px;
+	height: 197px;
+}
+.Desktop1_Desktop1 .Flashcards .Flashcard2 .Frame8_1 .image3 {
+	position: absolute;
+	left: -296px;
+	top: -132px;
+	width: 1260px;
+	height: 710px;
+	object-fit: cover;
+	overflow: hidden;
+}
+.Desktop1_Desktop1 .Flashcards .Flashcard2 .Cells {
+	position: absolute;
+	left: 29px;
+	top: 220px;
+	width: 325px;
+	height: 39px;
+	display: flex;
+	justify-content: center;
+	text-align: center;
+	align-items: center;
+	color: rgba(0,0,0,1.00);
+	font-family: Barlow;
+	font-size: 24px;
+	font-weight: 700;
+	line-height: 28.80000114440918px;
+}
+.Desktop1_Desktop1 .Flashcards .Flashcard1 {
+	position: absolute;
+	left: 55px;
+	top: 73px;
+	width: 381px;
+	height: 276px;
+	background: rgba(255,255,255,1.00);
+}
+.Desktop1_Desktop1 .Flashcards .Flashcard1 .Frame {
+	position: absolute;
+	left: 27px;
+	top: 22px;
+	width: 325px;
+	height: 197px;
+}
+.Desktop1_Desktop1 .Flashcards .Flashcard1 .Frame .image2 {
+	position: absolute;
+	left: -27px;
+	top: -22px;
+	width: 371px;
+	height: 258px;
+	object-fit: cover;
+	overflow: hidden;
+}
+.Desktop1_Desktop1 .Flashcards .Flashcard1 .Anatomy {
+	position: absolute;
+	left: 27px;
+	top: 225px;
+	width: 325px;
+	height: 39px;
+	display: flex;
+	justify-content: center;
+	text-align: center;
+	align-items: center;
+	color: rgba(0,0,0,1.00);
+	font-family: Barlow;
+	font-size: 24px;
+	font-weight: 700;
+	line-height: 28.80000114440918px;
+}
+.Desktop1_Desktop1 .Flashcards .LoadMore {
+	position: absolute;
+	left: 610px;
+	top: 404px;
+	width: 221px;
+	height: 55px;
+	background: rgba(0,116,39,0.26);
+	border-radius: 20px;
+	border: 1px solid rgba(0,115.81250354647636,39.376268684864044,1);
+	box-sizing: border-box;
+}
+.Desktop1_Desktop1 .Flashcards .LoadMore .LoadMore_1 {
+	position: absolute;
+	left: 18px;
+	top: 10px;
+	width: 185px;
+	height: 35px;
+	display: flex;
+	justify-content: center;
+	text-align: center;
+	color: rgba(0,30,10,1.00);
+	font-family: Barlow;
+	font-size: 24px;
+	font-weight: 700;
+	line-height: 28.80000114440918px;
+}

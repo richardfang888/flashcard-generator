@@ -1,0 +1,246 @@
+
+.Desktop1_1_Desktop1 {
+	position: relative;
+	left: 0px;
+	top: 0px;
+	margin: auto;
+	width: 100%;
+	height: 100vh;
+	overflow: auto;
+	background: rgba(255,255,255,1.00);
+}
+.Desktop1_1_Desktop1 .Body {
+	position: absolute;
+	left: 0px;
+	top: 135px;
+	width: 1440px;
+	height: 889px;
+	background: rgba(229,229,229,1.00);
+}
+.Desktop1_1_Desktop1 .Body .MainFlashcardPlaceholder {
+	position: absolute;
+	left: 302px;
+	top: 38px;
+	width: 1076px;
+	height: 639px;
+	background: rgba(255,255,255,1.00);
+}
+.Desktop1_1_Desktop1 .Body .MainFlashcardPlaceholder .PlaceholdertextPlaceholdertextPlaceholdertextPlaceholdertextPlaceholdertextPlaceholdertextPlaceholdertextPlaceholdertextPlaceholdertextPlaceholdertextPlaceholdertextPlaceholdertextPlaceholdertextPlaceholdertextPlaceholdertextPlaceholdertextPlaceholdertext {
+	position: absolute;
+	left: 85px;
+	top: 105px;
+	width: 912px;
+	height: 428px;
+	display: flex;
+	justify-content: center;
+	text-align: center;
+	align-items: center;
+	color: rgba(0,0,0,1.00);
+	font-family: Barlow;
+	font-size: 48px;
+	font-weight: 700;
+	line-height: 57.60000228881836px;
+}
+.Desktop1_1_Desktop1 .Body .Progress {
+	position: absolute;
+	left: 55px;
+	top: 40px;
+	width: 189px;
+	height: 808px;
+	background: rgba(255,255,255,1.00);
+}
+.Desktop1_1_Desktop1 .Body .Progress .YourProgressStudiedXOutofXXMasteredXXXLearningXXXXChallengeXXXXXTimeinSessionXXXX {
+	position: absolute;
+	left: 0px;
+	top: 12px;
+	width: 189px;
+	height: 767px;
+	display: flex;
+	justify-content: center;
+	text-align: center;
+	color: rgba(0,0,0,1.00);
+	font-family: Barlow;
+	font-size: 23px;
+	font-weight: 700;
+	line-height: 27.600000381469727px;
+}
+.Desktop1_1_Desktop1 .Body .Progress .image6 {
+	position: absolute;
+	left: 38px;
+	top: 584px;
+	width: 113px;
+	height: 107px;
+	object-fit: cover;
+	overflow: hidden;
+	mix-blend-mode: hard-light;
+}
+.Desktop1_1_Desktop1 .Body .Progress .Frame8 {
+	position: absolute;
+	left: 24px;
+	top: 57px;
+	width: 140px;
+	height: 80px;
+}
+.Desktop1_1_Desktop1 .Body .Progress .Frame8 .image3 {
+	position: absolute;
+	left: -207px;
+	top: -114px;
+	width: 469px;
+	height: 276px;
+	object-fit: cover;
+	overflow: hidden;
+}
+.Desktop1_1_Desktop1 .Body .ButtonMaster {
+	position: absolute;
+	left: 302px;
+	top: 720px;
+	width: 248px;
+	height: 128px;
+	background: rgba(0,116,39,0.15);
+	border-radius: 20px;
+	border: 1px solid rgba(0,115.81250354647636,39.376268684864044,1);
+	box-sizing: border-box;
+}
+.Desktop1_1_Desktop1 .Body .ButtonMaster .Mastered {
+	position: absolute;
+	left: 32px;
+	top: 38px;
+	width: 185px;
+	height: 35px;
+	display: flex;
+	justify-content: center;
+	text-align: center;
+	color: rgba(0,30,10,1.00);
+	font-family: Barlow;
+	font-size: 36px;
+	font-weight: 700;
+	line-height: 43.20000076293945px;
+}
+.Desktop1_1_Desktop1 .Body .ButtonLearning {
+	position: absolute;
+	left: 691px;
+	top: 720px;
+	width: 248px;
+	height: 128px;
+	background: rgba(0,116,39,0.35);
+	border-radius: 20px;
+	border: 1px solid rgba(0,115.81250354647636,39.376268684864044,1);
+	box-sizing: border-box;
+}
+.Desktop1_1_Desktop1 .Body .ButtonLearning .Good {
+	position: absolute;
+	left: 32px;
+	top: 38px;
+	width: 185px;
+	height: 35px;
+	display: flex;
+	justify-content: center;
+	text-align: center;
+	color: rgba(0,30,10,1.00);
+	font-family: Barlow;
+	font-size: 36px;
+	font-weight: 700;
+	line-height: 43.20000076293945px;
+}
+.Desktop1_1_Desktop1 .Body .ButtonNeedPractice {
+	position: absolute;
+	left: 1130px;
+	top: 720px;
+	width: 248px;
+	height: 128px;
+	background: rgba(0,116,39,0.50);
+	border-radius: 20px;
+	border: 1px solid rgba(0,115.81250354647636,39.376268684864044,1);
+	box-sizing: border-box;
+}
+.Desktop1_1_Desktop1 .Body .ButtonNeedPractice .NeedPractice {
+	position: absolute;
+	left: 31px;
+	top: 16px;
+	width: 185px;
+	height: 35px;
+	display: flex;
+	justify-content: center;
+	text-align: center;
+	color: rgba(0,30,10,1.00);
+	font-family: Barlow;
+	font-size: 36px;
+	font-weight: 700;
+	line-height: 43.20000076293945px;
+}
+.Desktop1_1_Desktop1 .Header {
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	width: 1440px;
+	height: 96px;
+	background: rgba(199,255,218,1.00);
+}
+.Desktop1_1_Desktop1 .Header .Logout {
+	position: absolute;
+	left: 1198px;
+	top: 19px;
+	width: 221px;
+	height: 55px;
+	background: rgba(199,255,218,1.00);
+	border-radius: 20px;
+	border: 1px solid rgba(0,115.81250354647636,39.376268684864044,1);
+	box-sizing: border-box;
+}
+.Desktop1_1_Desktop1 .Header .Logout .LogOut {
+	position: absolute;
+	left: 18px;
+	top: 10px;
+	width: 185px;
+	height: 35px;
+	display: flex;
+	justify-content: center;
+	text-align: center;
+	color: rgba(0,30,10,1.00);
+	font-family: Barlow;
+	font-size: 24px;
+	font-weight: 700;
+	line-height: 28.80000114440918px;
+}
+.Desktop1_1_Desktop1 .Header .Home {
+	position: absolute;
+	left: 968px;
+	top: 18px;
+	width: 221px;
+	height: 55px;
+	background: rgba(0,116,39,0.26);
+	border-radius: 20px;
+	border: 1px solid rgba(0,115.81250354647636,39.376268684864044,1);
+	box-sizing: border-box;
+}
+.Desktop1_1_Desktop1 .Header .Home .Home_1 {
+	position: absolute;
+	left: 18px;
+	top: 10px;
+	width: 185px;
+	height: 35px;
+	display: flex;
+	justify-content: center;
+	text-align: center;
+	color: rgba(0,30,10,1.00);
+	font-family: Barlow;
+	font-size: 24px;
+	font-weight: 700;
+	line-height: 28.80000114440918px;
+}
+.Desktop1_1_Desktop1 .Header .Logo {
+	position: absolute;
+	left: 22px;
+	top: 22px;
+	width: 175px;
+	height: 46px;
+	display: flex;
+	justify-content: center;
+	text-align: center;
+	align-items: center;
+	color: rgba(0,30,10,1.00);
+	font-family: Barlow;
+	font-size: 36px;
+	font-weight: 700;
+	line-height: 43.20000076293945px;
+}

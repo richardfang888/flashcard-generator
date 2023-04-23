@@ -13,6 +13,10 @@ const userSchema = mongoose.Schema({
     password: {
         type: String,
     },
+    studySets: {
+        type: Array,
+        default: [],
+    }
 });
 
 const User = mongoose.model('User', userSchema)

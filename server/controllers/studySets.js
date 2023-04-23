@@ -99,12 +99,13 @@ export const addFlashCard = async (req, res) => {
   };
   
   //generate flashcards using Cohere AI
-  cohere.init('<INSERT API KEY>')
-  export const generateFlashCards = async () => {
+  cohere.init('M5HQvvV8KR5K9o8U5THd65iMsSJFf0y8SD8mBJpp')
+  export const generateFlashCards = async (req, res) => {
     try {
+      const notes = req.body
       const generatedFlashCards = await cohere.generate({
         model: 'command-xlarge-nightly',
-        prompt: '{insert prompt}',
+        prompt: `please make flashcards out of the following information, in this format: one sentence that is a question, followed by one sentence that is the answer to that question. make it in digestible chunks, and make however many flashcards you feel appropriate.\n\n ${notes}`,
         max_tokens: 300,
         temperature: 0.9,
         k: 0,

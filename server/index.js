@@ -52,9 +52,9 @@ mongoose.connect(process.env.MONGO_URL, {
 
 /* ROUTES WITH FILES */
 app.post('/auth/register', register)
-app.post('/studySets', verifyToken, addStudySet)
+app.post('/studyset', verifyToken, addStudySet)
 
 /* ROUTES */
 app.use('/auth', authRoutes)
 app.use('/users', userRoutes)
-app.use('/studySets', studySetRoutes)
+app.use('/studyset', studySetRoutes)

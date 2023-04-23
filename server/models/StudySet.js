@@ -2,15 +2,15 @@ import mongoose from "mongoose";
 
 const flashCardSchema = new mongoose.Schema({
     question: {
-      type: String,
+      type: text,
       required: true
     },
     answer: {
-      type: String,
+      type: text,
       required: true
     },
     status: {
-      type: String,
+      type: text,
       enum: ['New', 'Reviewed', 'Mastered'],
       default: 'New'
     }
@@ -18,15 +18,15 @@ const flashCardSchema = new mongoose.Schema({
 
 const studySetSchema = new mongoose.Schema({
     userId: {
-      type: String,
+      type: text,
       required: true,
     },
     title: {
-      type: String,
+      type: text,
       required: true
     },
     description: {
-      type: String,
+      type: text,
       required: true
     },
     flashCards: [flashCardSchema]

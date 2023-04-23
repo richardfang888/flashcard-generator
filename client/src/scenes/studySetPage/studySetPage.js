@@ -1,21 +1,9 @@
-import { useState } from 'react';
+import axios from 'axios';
+import { useEffect, useState } from 'react';
 import {Flashcard} from 'react-quizlet-flashcard';
 
 function Flash() {
-  const [flashcards, setFlashcards] = useState([
-    {
-      front: 'What is the capital of France?',
-      back: 'Paris',
-    },
-    {
-      front: 'What is the largest continent in the world?',
-      back: 'Asia',
-    },
-    {
-      front: 'Who is the founder of SpaceX?',
-      back: 'Elon Musk',
-    },
-  ]);
+  const [flashcards, setFlashcards] = useState([]);
 
   const [newQuestion, setNewQuestion] = useState('');
   const [newAnswer, setNewAnswer] = useState('');
@@ -24,9 +12,27 @@ function Flash() {
     e.preventDefault();
 
     const newFlashcard = {
-      front: newQuestion,
-      back: newAnswer,
+
+      question: newQuestion,
+      answer: newAnswer,
     };
+
+    useEffect(() => {
+        // Fetch flashcards data from server when component mounts
+        const fetchFlashcards = async () => {
+          try {
+            const response = await axios.get('/api/flashcards'); // Make a GET request to your server endpoint for fetching flashcards
+            setFlashcards(response.data);
+            setNewQuestion(response.data);
+            setNewAnswer(response.data);
+          } catch (error) {
+            console.error(error);
+          }
+        };
+    
+        fetchFlashcards();
+      }, []);
+
 
     setFlashcards([...flashcards, newFlashcard]);
 
@@ -54,6 +60,8 @@ function Flash() {
       </form>
     </div>
   );
+
+
 }
 
 export default Flash;

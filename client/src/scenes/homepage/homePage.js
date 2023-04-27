@@ -26,7 +26,7 @@ const HomePage = () => {
   };
 
   const handleGenerate = async (event) => {
-    // event.preventDefault();
+    event.preventDefault();
     console.log(`Topic: ${gtopic}, Notes: ${notes}`);
     const response = await fetch("http://localhost:3001/studysets/generate", {
       mode: 'no-cors',
@@ -41,11 +41,12 @@ const HomePage = () => {
   };
 
   const handleManual = async (event) => {
+    event.preventDefault();
     const response = await fetch("http://localhost:3001/studysets", {
       mode: 'no-cors',
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ mtopic, notes }),
+      body: JSON.stringify({ mtopic }),
     });
     setMTopic("");
     setShowMForm(false);

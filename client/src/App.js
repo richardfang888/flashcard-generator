@@ -1,4 +1,4 @@
-import {BrowserRouter, Navigate, Routes, Route} from 'react-router-dom'
+import {BrowserRouter, Routes, Route} from 'react-router-dom'
 import LoginPage from "./scenes/loginPage/loginPage";
 import HomePage from "./scenes/homepage/homePage"
 import StudyPage from "./scenes/studySetPage/studySetPage"
@@ -10,6 +10,7 @@ import { useSelector } from 'react-redux';
 function App() {
   const theme = createTheme(themeSettings())
   const user = useSelector(state => state.user)
+  console.log(user)
   return (
     <div className = 'app'>
       <BrowserRouter>
@@ -17,7 +18,7 @@ function App() {
         <CssBaseline>
             <Routes>
               <Route path="/" element={<LoginPage />} />
-              <Route path={`/users/${user}`} element={<HomePage />}/>
+              <Route path={`/users/:userId`} element={<HomePage />}/>
               <Route path="/:" element={<StudyPage />}/>
             </Routes>
         </CssBaseline>

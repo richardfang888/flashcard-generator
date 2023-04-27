@@ -51,6 +51,7 @@ const Form = () => {
     const savedUserResponse = await fetch(
       "http://localhost:3001/auth/register",
       {
+        mode: 'no-cors',
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(values),
@@ -66,6 +67,7 @@ const Form = () => {
 
   const login = async (values, user, onSubmitProps) => {
     const loggedInResponse = await fetch("http://localhost:3001/auth/login", {
+      mode: 'no-cors',
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(values),
@@ -77,7 +79,7 @@ const Form = () => {
           user: loggedIn.user,
         })
       );
-      navigate(`/users/${user}`);
+      navigate(`/users/${user._id}`);
     }
   };
 
